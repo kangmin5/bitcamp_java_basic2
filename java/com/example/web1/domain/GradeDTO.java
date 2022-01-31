@@ -1,0 +1,71 @@
+package com.example.web1.domain;
+
+/**
+ * packageName: com.example.web1.grade
+ * fileName   : GradeApp
+ * author     : kangmin5
+ * date       : 2022-01-26
+ * desc       :
+ * /* 사용자로부터
+ * 이름 [          ]
+ * 국어 [          ]
+ * 영어 [          ]
+ * 수학 [          ]
+ * 을 차례대로 입력 받아서
+ * ########## 성적표 ########
+ * 이름: 홍길동
+ * > 국어: 80점
+ * > 영어: 79점
+ * > 수학: 80점
+ * 총점: 239점
+ * 평균(정수): 79점
+ * 합격여부: 합격(불합격)
+ * #######################
+ * 출력되는 프로그램을 작성
+ * 단, 합격 / 불합격 기준은
+ * 평균 60점 이상이면 합격
+ *
+ * =====================================
+ * DATE          author       Note
+ * =====================================
+ * 2022-01-31   kangmin5   BMI영역 double형으로 모두 수정하여 결과 값 정확히 도출
+ * 2022-01-26   kangmin5    최초생성
+ */
+public class GradeDTO {
+    public static String GRADE_TITLE = "======성적표======";
+    private String name;
+    private int kor ;
+    private int eng ;
+    private int math ;
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public int getKor() {
+        return kor;
+    }
+    public void setKor(int kor){
+        this.kor = kor;
+    }
+    public int getEng() {
+        return eng;
+    }
+    public void setEng(int eng){
+        this.eng = eng;
+    }
+    public int getMath() {
+        return math;
+    }
+    public void setMath(int math){
+        this.math = math;
+    }
+
+    public String toString(){
+        return String.format("name %s kor %d eng %d math %d",name,kor,eng,math);
+    }
+
+}
