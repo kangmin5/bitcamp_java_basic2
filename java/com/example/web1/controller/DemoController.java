@@ -35,7 +35,7 @@ public class DemoController {
             BmiDTO bmi = new BmiDTO();
             CalcDTO calc = new CalcDTO();
             GoogleDTO google = new GoogleDTO();
-            GradeDTO grade = new GradeDTO();
+
             LoginDTO login = new LoginDTO();
             BmiService bmiService = new BmiService();
             CalcService calcService = new CalcService();
@@ -71,12 +71,28 @@ public class DemoController {
                     res = googleService.getGoogle(google);
                     break;
                 case "4":
-                    System.out.println(GradeDTO.GRADE_TITLE+ "\n이름,국어,영어,수학 입력 : ");
-                    grade.setName(scanner.next());
-                    grade.setKor(scanner.nextInt());
-                    grade.setEng(scanner.nextInt());
-                    grade.setMath(scanner.nextInt());
-                    res = gradeService.execute(grade);
+                    System.out.println(GradeDTO.GRADE_TITLE+ "\n 학생 수를 입력하고,이름,국어,영어,수학 입력 : ");
+                    System.out.println("학생수를 입력하세요");
+                    int count = scanner.nextInt();
+                    GradeDTO[] grades = new GradeDTO[count];
+                    System.out.println("이름,국어,영어,수학 입력 : ");
+                    for(int i =0;i <count ;i++) {
+                        System.out.println("다음 입력 : ");
+                        grades[i] = new GradeDTO();
+                        grades[i].setName(scanner.next());
+                        grades[i].setKor(scanner.nextInt());
+                        grades[i].setEng(scanner.nextInt());
+                        grades[i].setMath(scanner.nextInt());
+                        System.out.println();
+                    }
+                    for (int i = 0; i < count; i++) {
+                        System.out.println("이름은 " +grades[i].getName()+"국어점수 : " +grades[i].getKor()+ "수학점수 :"+ grades[i].getMath()+"영어점수 : "+
+                                grades[i].getEng());
+                    }
+
+
+
+//                    res = gradeService.execute(grades);
                     break;
                 case "5":
                     System.out.println(LoginDTO.TITLE+"\n아이디,패스워드,이름 입력 : ");
