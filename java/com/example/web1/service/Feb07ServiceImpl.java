@@ -38,13 +38,57 @@ public class Feb07ServiceImpl implements Feb07Service {
 
     @Override
     public void rps(Scanner scanner) {
+        while (true){
+            System.out.println("###가위바위보 게임###\n" +
+                    "0.종료 1.가위 2.바위 3.보");
+            int user = scanner.nextInt();
+            int com = (int)(Math.random() * 3);
+            String s = "";
+            String[] arrrps = new String[3];
+            arrrps[0] = "가위";
+            arrrps[1] = "바위";
+            arrrps[2] = "보";
+            switch (user){
+                case 0: System.out.println("가위바위보 종료"); return;
+                case 1:
+                    System.out.println("유저는"+arrrps[user-1]+", 컴퓨터는"+arrrps[com]+"을(를)냈습니다.");
+                    if (com ==0){
+                        s = "비겼습니다.";
+                    } else if(com == 1){
+                        s = "컴퓨터가 이겼습니다.";
+                    } else {
+                        s = "유져가 이겼습니다.";
+                    } break;
+                case 2:
+                    System.out.println("유저는"+arrrps[user-1]+", 컴퓨터는"+arrrps[com]+"을(를)냈습니다.");
+                    if (com ==0){
+                        s = "유져가 이겼습니다.";
+                    } else if(com == 1){
+                        s = "비겼습니다.";
+                    } else {
+                        s = "컴퓨터가 이겼습니다.";
+                    }break;
+                case 3:
+                    System.out.println("유저는"+arrrps[user-1]+", 컴퓨터는"+arrrps[com]+"을(를)냈습니다.");
+                    if (com ==0){
+                        s = "컴퓨터가 이겼습니다.";
+                    } else if(com == 1){
+                        s = "유져가 이겼습니다.";
+                    } else {
+                        s = "비겼습니다.";
+                    }break;
+                default:
+                    s = "잘못 입력하셨습니다."; break;
+            }
 
+            System.out.println(s);
+        }
     }
 
     @Override
     public void getPrime(Scanner scanner) {
         int count=0;
-        System.out.println("100이하의 숫자를 입력(소수 구하기 : ");
+        System.out.println("100이하의 숫자를 입력(소수 구하기) : ");
         int number = scanner.nextInt();
 
         for (int i = 2; i < number; i++) {
@@ -98,6 +142,7 @@ public class Feb07ServiceImpl implements Feb07Service {
         int count = 0;
         int num = (int)(Math.random() * 100)+1;
         int num_enter = 0;
+
         Scanner cho = new Scanner(System.in);
 
         while (num != num_enter){
@@ -112,8 +157,6 @@ public class Feb07ServiceImpl implements Feb07Service {
                 count++;
             }
         }
-        System.out.println("정답입니다\t" + count +"회 만에 맞췄어요.");
-//        cho.close();
-        return;
+        System.out.println("정답입니다 " + count +"회 만에 맞췄어요.");
     }
 }

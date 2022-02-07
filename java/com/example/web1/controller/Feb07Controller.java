@@ -52,6 +52,8 @@ public class Feb07Controller {
             System.out.println();
             System.out.println();
             System.out.println();
+            System.out.println("[5조 Report ] ");
+            System.out.println(" 작성자 : 1.유재혁 2.최건일 3.강민 4.장원종 5.김아름");
             System.out.println(menu);
         }
     }
