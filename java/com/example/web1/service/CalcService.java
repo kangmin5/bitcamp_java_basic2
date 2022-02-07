@@ -17,7 +17,7 @@ import com.example.web1.domain.CalcDTO;
 
 
 public class CalcService {
-    public String getCalc(CalcDTO calc) {
+    public String calc(CalcDTO calc) {
         int sum = 0;
         switch (calc.getOpcode()){
             case "+" : sum = calc.getNum1()+calc.getNum2();break;

@@ -14,7 +14,7 @@ import com.example.web1.domain.GoogleDTO;
  * 2022-01-25   kangmin5    최초생성
  */
 public class GoogleService {
-    public String getGoogle(GoogleDTO google) {
+    public String google(GoogleDTO google) {
         return String.format("검색할 단어는 : %s ", google.getText());
 
     }

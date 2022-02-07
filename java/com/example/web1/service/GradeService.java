@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
  * 2022-01-26   kangmin5    최초생성
  */
 public class GradeService {
-    public String execute(@NotNull GradeDTO grade) {
+    public String grade(@NotNull GradeDTO grade) {
         System.out.println(" GradeService에 들어옴");
         System.out.println(grade.toString());
         int total = grade.getKor()+ grade.getEng()+ grade.getMath();

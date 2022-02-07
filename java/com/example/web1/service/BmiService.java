@@ -23,7 +23,7 @@ import com.example.web1.domain.BmiDTO;
 //}
 
 public class BmiService {
-    public String getBmi(BmiDTO bmi) {
+    public String bmi(BmiDTO bmi) {
         double res =0;
         res = (bmi.getWeight() / (bmi.getTall() * bmi.getTall())) * 10000;
         String resResult;
