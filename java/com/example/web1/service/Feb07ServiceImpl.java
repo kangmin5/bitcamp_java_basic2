@@ -43,52 +43,39 @@ public class Feb07ServiceImpl implements Feb07Service {
                     "0.종료 1.가위 2.바위 3.보");
             int user = scanner.nextInt();
             int com = (int)(Math.random() * 3);
-            String s = "";
-            String[] arrrps = new String[3];
-            arrrps[0] = "가위";
-            arrrps[1] = "바위";
-            arrrps[2] = "보";
-            switch (user){
-                case 0: System.out.println("가위바위보 종료"); return;
-                case 1:
-                    System.out.println("유저는"+arrrps[user-1]+", 컴퓨터는"+arrrps[com]+"을(를)냈습니다.");
-                    if (com ==0){
-                        s = "비겼습니다.";
-                    } else if(com == 1){
-                        s = "컴퓨터가 이겼습니다.";
-                    } else {
-                        s = "유져가 이겼습니다.";
-                    } break;
-                case 2:
-                    System.out.println("유저는"+arrrps[user-1]+", 컴퓨터는"+arrrps[com]+"을(를)냈습니다.");
-                    if (com ==0){
-                        s = "유져가 이겼습니다.";
-                    } else if(com == 1){
-                        s = "비겼습니다.";
-                    } else {
-                        s = "컴퓨터가 이겼습니다.";
-                    }break;
-                case 3:
-                    System.out.println("유저는"+arrrps[user-1]+", 컴퓨터는"+arrrps[com]+"을(를)냈습니다.");
-                    if (com ==0){
-                        s = "컴퓨터가 이겼습니다.";
-                    } else if(com == 1){
-                        s = "유져가 이겼습니다.";
-                    } else {
-                        s = "비겼습니다.";
-                    }break;
-                default:
-                    s = "잘못 입력하셨습니다."; break;
+            String[] arr = {"가위", "바위", "보"};
+            String s = "결과: ";
+            while (user<0){
+                System.out.println("잘못 입력하셨습니다. 다시 입력해주세요\n");
+                user = scanner.nextInt();
             }
-
+            while (user>3){
+                System.out.println("잘못 입력하셨습니다. 다시 입력해주세요\n");
+                user = scanner.nextInt();
+            }
+            if (user == 0){break;}
+            System.out.println("사용자: "+ arr[user-1]+"\t컴퓨터: "+arr[com]);
+            if (user-1 == com){
+                s += "무승부";
+            } else if (com == (user-1)%3+1){
+                s += "컴퓨터 승리";
+            } else {
+                s += "유저 승리";
+            }
             System.out.println(s);
         }
     }
 
     @Override
+    /**
+     * 소수를 구하기
+     * 소수는 1보다 큰 자연수 중 1과 자기 자신만을 약수로 가지는 수이다.
+     * 설명) 자연수를 기준으로  기초값 1은 생략하고 범위를 주면 값을 구하는 공식
+     *      숫자를 입력하면 1~숫자 까지의 소수들 print
+     * */
     public void getPrime(Scanner scanner) {
         int count=0;
-        System.out.println("100이하의 숫자를 입력(소수 구하기) : ");
+        System.out.println("숫자를 입력(소수 구하기) : ");
         int number = scanner.nextInt();
 
         for (int i = 2; i < number; i++) {
@@ -105,10 +92,22 @@ public class Feb07ServiceImpl implements Feb07Service {
     }
 
     @Override
+    /**윤년은 4년마다 돌아오는데 100년으로 나누어 떨어지면 평년
+     * but 400년으로 나누어 떨어지면 윤년
+     * ex) 2020, 2024, 2028 => 윤년
+     *     2100, 2200, 2300 => 평년
+     *     2000, 2400, 2800 => 윤년
+     *     조건이 참일 경우 윤년 아닐경우 평년
+     *
+     */
     public void leapYear(Scanner scanner) {
-        System.out.println("자바로 입력받은 연도가 윤년인지 평년인지 판단하기");
-        System.out.println("연도를 입력하시오");
+        System.out.println("자바로 입력받은 연도가 윤년인지 평년인지 판단하기\n"+"연도를 입력하시오");
         int a = scanner.nextInt();
+        if(a%4==0 && a%100!=0 || a%400==0){
+            System.out.println(a +"년은 윤년입니다");
+        }else{
+            System.out.println(a +"년은 평년입니다");
+        }
         /*if(a%4==0){
             System.out.println(a+"년은 윤년입니다");
         }else if(a%400==0){
@@ -116,6 +115,7 @@ public class Feb07ServiceImpl implements Feb07Service {
         }else if(a%100!=0){
             System.out.println(a+"년은 평년입니다");
         }*/
+
         /*int input = 0;
         int a = 0;
         switch (input){
@@ -127,13 +127,7 @@ public class Feb07ServiceImpl implements Feb07Service {
                 break;
             case a%400==0 :
                 System.out.println("윤년");
-                break;
-        }*/
-        if(a%4==0 && a%100!=0 || a%400==0){
-            System.out.println(a +"는 윤년입니다");
-        }else{
-            System.out.println(a +"는 평년입니다");
-        }
+                break;}*/
     }
 
     @Override

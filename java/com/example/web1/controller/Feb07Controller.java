@@ -14,6 +14,7 @@ import java.util.Scanner;
  * =====================================
  * DATE          author       Note
  * =====================================
+ * 2022-02-08   kangmin5    아침 수정본
  * 2022-02-07   kangmin5    최초생성
  */
 public class Feb07Controller {
@@ -22,7 +23,7 @@ public class Feb07Controller {
         Scanner scanner = new Scanner(System.in);
         System.out.println("[5조 Report ] ");
         System.out.println(" 작성자 : 1.유재혁 2.최건일 3.강민 4.장원종 5.김아름");
-        String menu = "0.EXIT 1.주사위 2.가위바위보 3.1~100까지소수구하기 4.입력받은년도가(윤년/평년) 5.임의의숫자맞추기";
+        String menu = "0.EXIT 1.주사위 2.가위바위보 3.소수 구하기 4.입력받은년도가(윤년/평년) 5.임의의숫자맞추기";
         System.out.println(menu);
         System.out.print("번호 입력: ");
         while(true){
