@@ -1,6 +1,7 @@
 package com.example.web1;
 
 import com.example.web1.algo.controller.AlgoController;
+import com.example.web1.oop.controller.OopController;
 import com.example.web1.phone.controller.PhoneController;
 import com.example.web1.quiz.controller.QuizController;
 import com.example.web1.student.controller.StudentController;
@@ -21,8 +22,9 @@ public class SampleApplication {
 		QuizController quizController = new QuizController();
 		StudentController studentController = new StudentController();
 		AlgoController algoController = new AlgoController();
+		OopController oopController = new OopController();
 		while (true){
-			String menu = "0.EXIT 1.PHONE 2.QUIZ 3.STUDENT 4.알고리즘";
+			String menu = "0.EXIT 1.PHONE 2.QUIZ 3.STUDENT 4.알고리즘 5. 휴대폰";
 			System.out.println("--[MAIN Menu]--"+menu);
 			System.out.println("press Number : ");
 			switch (scanner.nextInt()){
@@ -44,6 +46,10 @@ public class SampleApplication {
 				case 4:
 					System.out.println("알고리즘");
 					algoController.execute(scanner);
+					break;
+				case 5:
+					System.out.println("휴대폰");
+					oopController.execute(scanner);
 					break;
 				default:
 					break;
