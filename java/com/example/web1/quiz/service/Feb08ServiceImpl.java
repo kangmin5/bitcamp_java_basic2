@@ -155,13 +155,13 @@ public class Feb08ServiceImpl implements Feb08Service{
                     String name = scanner.next();
                     System.out.println("현재 예약상태");
                     for(int i = 0; i<22; i++){
-                        s += i+1+"\t\n";
+                        s += i+1+"\t";
                     }
                     System.out.println(s);
 
                     for (int i : seat)
                         System.out.print(i+"\t");
-                    System.out.println("좌석선택");
+                    System.out.println("\n좌석선택");
                     reserved = scanner.nextInt();
 
                     seat[reserved - 1]=1;
