@@ -1,4 +1,4 @@
-package com.example.web1.quiz.controller;
+package com.example.web1.aaa.controller;
 
 
 import java.util.Scanner;

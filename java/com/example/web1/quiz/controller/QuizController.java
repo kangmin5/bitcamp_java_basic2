@@ -1,7 +1,7 @@
 package com.example.web1.quiz.controller;
 
-import com.example.web1.quiz.service.Feb06Service;
-import com.example.web1.quiz.service.Feb06ServiceImpl;
+import com.example.web1.quiz.service.*;
+import org.springframework.stereotype.Controller;
 
 import java.util.Scanner;
 
@@ -16,38 +16,111 @@ import java.util.Scanner;
  * =====================================
  * 2022-02-03   kangmin5    최초생성
  */
+
 public class QuizController {
-    public  void execute(Scanner scanner) {
-        String[] arr = {"김아름", "장원종", "강민", "최건일", "유재혁",
-                "Stack", "Blute Force", "그래프", "Binary Search", "Hash",
-                "Heap", "DFS", "DP", "Greddy", "Sort",
-                "Queue", "BFS",
-        };
+    public void execute(Scanner scanner){
+
         Feb06Service feb06Service = new Feb06ServiceImpl();
-        Feb07Controller feb07Controller = new Feb07Controller();
-
-        System.out.println("번호를 선택 : 0.종료 1.Feb06 2.Feb07 3.Feb08 4.Feb09 ");
-        int num = scanner.nextInt();
+        Feb07Service feb07Service = new Feb07ServiceImpl();
+        Feb08Service feb08Service = new Feb08ServiceImpl();
         while (true){
-
-            switch (num) {
-                case 0:
-                    System.out.println("0.EXIT");
+            System.out.println("[서브메뉴]\n 0)Exit 1)2월6일 2)2월7일 3)2월8일 3)2월9일");
+            switch (scanner.next()){
+                case "0":
+                    System.out.println("### 서브메뉴 종료 ###");
                     return;
-                case 1:
-                    break;
-                case 2:
-                    feb07Controller.execute(scanner);
-                    break;
-                case 3:
-                    break;
-                case 4:
+                case "1":
+                    String[] arr = {"김아름", "장원종", "강민", "최건일", "유재혁",
+                            "Stack", "Blute Force", "그래프", "Binary Search", "Hash",
+                            "Heap", "DFS", "DP", "Greddy", "Sort",
+                            "Queue", "BFS",
+                    };
+                    System.out.println("[소메뉴]\n 0.Exit \n1.팀별 과제 \n2.팀장이 맡은 과제 \n3.큐를 담당한 사람\n 4.팀원별 과제 수");
+                    switch (scanner.next()){
+                        case "0":
+                            System.out.println("### 소메뉴 종료 ###");
+                            return;
+                        case "1":
+                            System.out.println("### 1.팀별 과제 ###");
+                            feb06Service.quiz1(arr);
+                            break;
+                        case "2":
+                            break;
+                        default:
+                            break;
+                    }
+                break;
+
+                case "2":
+                    System.out.println("[소메뉴]\n0.Exit \n1.주사위 \n2.가위바위보 \n3.소수 구하기 \n4.윤년/평년 \n5.임의숫자 맞추기");
+                    System.out.println("작성자 : 3.강민");
+                    switch (scanner.next()){
+                        case "0":
+                            System.out.println("### 소메뉴 종료 ###");
+                            return;
+                        case "1":
+                            System.out.println("### 1.주사위 ###");
+                            feb07Service.DICE(scanner);
+                            break;
+                        case "2":
+                            System.out.println("### 2.가위바위보 ###");
+                            feb07Service.rps(scanner);
+                            break;
+                        case "3":
+                            System.out.println("### 3.소수 구하기 ###");
+                            feb07Service.getPrime(scanner);
+                            break;
+                        case "4":
+                            System.out.println("### 4.윤년/평년 ###");
+                            feb07Service.leapYear(scanner);
+                            break;
+                        case "5":
+                            System.out.println("### 5.임의의 수 맞추기 ###");
+                            feb07Service.numberGolf(scanner);
+                            break;
+                        default:
+                            break;
+                    }
+                break;
+
+                case "3":
+                    System.out.println("[소메뉴]\n0.Exit \n1.로또 \n2.야구 \n3.좌석예약 \n4.은행입출금 \n5.구구단");
+                    System.out.println("작성자 : 4.강민 .유재혁");
+                    switch (scanner.next()){
+                        case "0":
+                            System.out.println("### 소메뉴 종료 ###");
+                            return;
+                        case "1":
+                            System.out.println("### 1.로또 ###");
+                            feb08Service.lotto(scanner);
+                            break;
+                        case "2":
+                            System.out.println("### 2.야구 ###");
+                            feb08Service.baseball(scanner);
+                            break;
+                        case "3":
+                            System.out.println("### 3. 좌석예약 ###");
+                            feb08Service.booking(scanner);
+                            break;
+                        case "4":
+                            System.out.println("### 4. 은행입출금 ###");
+                            feb08Service.bank(scanner);
+                            break;
+                        case "5":
+                            System.out.println("### 5. 구구단 ###");
+                            feb08Service.gugudan(scanner);
+                            break;
+                        default:
+                            System.out.println("Wrong Number !!!");
+                            break;
+                    }
                     break;
                 default:
+                    System.out.println("Wrong Number!!!");
                     break;
+
             }
         }
-
-
     }
+
 }

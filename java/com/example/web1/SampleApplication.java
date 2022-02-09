@@ -2,7 +2,6 @@ package com.example.web1;
 
 import com.example.web1.algo.controller.AlgoController;
 import com.example.web1.phone.controller.PhoneController;
-import com.example.web1.quiz.controller.Feb07Controller;
 import com.example.web1.quiz.controller.QuizController;
 import com.example.web1.student.controller.StudentController;
 import org.springframework.boot.SpringApplication;
@@ -28,7 +27,7 @@ public class SampleApplication {
 			System.out.println("press Number : ");
 			switch (scanner.nextInt()){
 				case 0:
-					System.out.println("0.EXIT");
+					System.out.println("===메인메뉴 종료===");
 					return;
 				case 1:
 					System.out.println("PHONE");
@@ -49,7 +48,7 @@ public class SampleApplication {
 				default:
 					break;
 			}
-
+			break;
 		}
 	}
 }
