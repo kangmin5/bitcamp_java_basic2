@@ -53,7 +53,7 @@ public class QuizController {
 
                 case "2":
                     System.out.println("[소메뉴]\n0.Exit \n1.주사위 \n2.가위바위보 \n3.소수 구하기 \n4.윤년/평년 \n5.임의숫자 맞추기");
-                    System.out.println("작성자 : 3.강민");
+                    System.out.println(" 작성자 : 1.유재혁 2.최건일 3.강민 4.장원종 5.김아름");
                     switch (scanner.next()){
                         case "0":
                             System.out.println("### 소메뉴 종료 ###");
@@ -85,7 +85,7 @@ public class QuizController {
 
                 case "3":
                     System.out.println("[소메뉴]\n0.Exit \n1.로또 \n2.야구 \n3.좌석예약 \n4.은행입출금 \n5.구구단");
-                    System.out.println("작성자 : 4.강민 .유재혁");
+                    System.out.println("작성자 : 1.최건일 2.장원종 3.김아름 4.강민 5.유재혁");
                     switch (scanner.next()){
                         case "0":
                             System.out.println("### 소메뉴 종료 ###");
