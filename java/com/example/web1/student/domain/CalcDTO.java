@@ -13,9 +13,24 @@ package com.example.web1.student.domain;
 
 public class CalcDTO {
     public static String CALC_TITLE ="======계산기======";
+
+    private final static CalcDTO calcDTO = new CalcDTO();
+    private CalcDTO(){}
+    public static CalcDTO getInstance(){return calcDTO;}
+
     private int num1;
     private String opcode;
     private int num2;
+
+//    protected String n;
+//    protected String o;
+//    protected String p;
+//
+//    public CalcDTO(String n, String o, String p) {
+//        this.n = n;
+//        this.o = o;
+//        this.p = p;
+//    }
 
     public int getNum1() {
         return num1;
@@ -26,6 +41,7 @@ public class CalcDTO {
     public  int getNum2(){
         return num2;
     }
+
     public void setNum1(int num1){
         this.num1 = num1;
     }
@@ -36,7 +52,9 @@ public class CalcDTO {
         this.num2 = num2;
     }
 
-//    public String getCalc(int num1, String opcode, int num2) {
+
+
+    //    public String getCalc(int num1, String opcode, int num2) {
 //        this.num1 =num1;
 //        this.opcode = opcode;
 //        this.num2 = num2;

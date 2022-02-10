@@ -18,8 +18,12 @@ package com.example.web1.student.domain;
  */
 public class GoogleDTO {
     public static String GOOGLE = "======Google======";
-    private String text;
 
+    private final static GoogleDTO googleDTO = new GoogleDTO();
+    private GoogleDTO(){};
+    public static GoogleDTO getInstance(){return googleDTO;}
+
+    private String text;
     public String getText(){
         return text;
     }

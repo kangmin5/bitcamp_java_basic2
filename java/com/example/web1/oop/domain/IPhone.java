@@ -19,13 +19,9 @@ public class IPhone extends CelPhone{
 
     public IPhone(String kind, String company, String move) {
         super(kind, company, move);
-
     }
 
 
-    //    public IPhone(String company, String move){
-//        super(company,move);
-//    }
 
     public String getSearch() {
         return search;

@@ -1,4 +1,5 @@
 package com.example.web1.student.domain;
+
 /**
  * packageName: com.example.web1.calc
  * fileName   : login
@@ -10,31 +11,40 @@ package com.example.web1.student.domain;
  * ==================================
  * 2022-01-25   kangmin5    최초생성
  */
-public class LoginDTO {
-    public static String TITLE="=====LOGIN APP=====";
-    public static String PASSWORD = "abc";
+public class UserDTO {
+    public static String TITLE = "=====LOGIN APP=====";
+
+    private final static UserDTO userDTO = new UserDTO();
+    private UserDTO() {}
+    public static UserDTO getInstance() {return userDTO;}
+
     String id;
     String pw;
     String name;
+    public static String PASSWORD = "abc";
 
     public String getId() {
         return id;
     }
+
     public String getPw() {
         return pw;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public void setId(String id){
+
+    public void setId(String id) {
         this.id = id;
     }
-    public void setPw(String pw){
+
+    public void setPw(String pw) {
         this.pw = pw;
     }
 
     public void setName(String name) {
-        this.name=name;
+        this.name = name;
     }
 
 }

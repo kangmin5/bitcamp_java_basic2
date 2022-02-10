@@ -51,6 +51,7 @@ public class SampleApplication {
 					System.out.println("휴대폰");
 					oopController.execute(scanner);
 					break;
+
 				default:
 					break;
 			}

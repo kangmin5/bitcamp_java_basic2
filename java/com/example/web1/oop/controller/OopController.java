@@ -44,9 +44,12 @@ public class OopController {
                     System.out.println("extends가 상속이다.");
                     PhoneService service = new PhoneServiceImpl();
 
+
                     Phone phone = new Phone("금성전화기","금성전자");
                     CelPhone celPhone = new CelPhone("핸드폰","블랙베리","이동중에");
+
                     IPhone iPhone = new IPhone("아이폰","애플","이동");
+
                     GalPhone galPhone = new GalPhone("삼성","삼성","이동삼성에");
                     System.out.println("[소메뉴 0.종료 1.집전화 2.휴대폰 3.아이폰 4.갤럭시폰]");
                     switch (scanner.nextInt()){
