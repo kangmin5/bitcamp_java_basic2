@@ -1,62 +1,45 @@
-package com.example.web1.quiz.service;
-
-import java.util.Random;
+package com.example.web1.aaa;
 
 /**
- * packageName: com.example.web1.quiz.service
+ * packageName: com.example.web1.aaa
  * fileName   :
  * author     : kangmin5
- * date       : 2022-02-10
+ * date       : 2022-02-13
  * desc       :
  * =====================================
  * DATE          author       Note
  * =====================================
- * 2022-02-10   kangmin5    최초생성
+ * 2022-02-13   kangmin5    최초생성
  */
-public class Feb10ServiceImpl implements Feb10Service{
-
-    @Override
-    public void bubbleSort() {
+public class quickSort1 {
+    public static void main(String[] args) {
         // 랜덤 정수 ( 1 ~ 100) 사이의 10 개 정수 정렬
-    }
-
-    @Override
-    public void insertionSort() {
-        // 랜덤 정수 ( 1 ~ 100) 사이의 10 개 정수 정렬
-    }
-
-    @Override
-    public void selectionSort() {
-        // 랜덤 정수 ( 1 ~ 100) 사이의 10 개 정수 정렬
-    }
-
-
-    /*
-     *  author     : 강 민
-     * desc        : QuickSort
-     * 참고한 블로그 : 
-     * */
-    @Override
-    public void quickSortRun() {
-    // 랜덤 정수 ( 1 ~ 100) 사이의 10 개 정수 정렬
         System.out.println("====quickSort()===");
         int num;
         int[] arr = new int[10];
+        int sum =0;
         String res="";
         String ss="";
         for(int i=0 ;i<arr.length ;i++){
             num = (int)(Math.random()*100+1);
             arr[i] = num;
+            sum += arr[i];
             ss += arr[i]+", ";
         }
-        System.out.println("random 숫자 10개 입력 값 : "+ss);
+        System.out.println("random 숫자 10개 : "+ss);
+        System.out.println("\n  숫자의 합 : "+sum);
+
+        //start,end, pivot값 찾기
+        int start = arr[0];
+        int end = arr[arr.length-1];
+        int pivot = sum / arr.length;
+        System.out.println(pivot);
 
         quickSort(arr,0,arr.length-1);
         for(int i=0;i<arr.length;i++) {
             res += arr[i]+",";
         }
-        System.out.print("quickSort 후의 결과출력 값 :"+res);
-        System.out.println();
+        System.out.print("quickSort 후의 값 :"+res);
         System.out.println();
     }
 
@@ -66,6 +49,7 @@ public class Feb10ServiceImpl implements Feb10Service{
         //도착점(파티션 - 1) 을 파라미터로 가진다.
         if (end > part) quickSort(arr, part, end); // 도착점이 파트보다 클 경우, (배열, 파트, 도착점을 파라미터로 가진다.
     }
+
 
     public static int partition(int[] arr, int start, int end) { // 파티션이라는 메서드에 인트 배열, 출발점, 도착점을 파라미터로 가지는
         //위에서 생성한 파티션이라는 변수
@@ -90,91 +74,4 @@ public class Feb10ServiceImpl implements Feb10Service{
         return; //반환
     }
 
-
-    /*
-     *  author     : 강 민
-     * desc        : mergeSort
-     * 참고한 블로그 :
-     * */
-    @Override
-    public void mergeSort() {
-        // 랜덤 정수 ( 1 ~ 100) 사이의 10 개 정수 정렬
-        System.out.println("====mergeSort()===");
-        int num;
-        String ss="";
-        int[] arr = new int[10];
-        for(int i=0 ;i<10 ;i++){
-            num = (int)(Math.random()*100+1);
-            arr[i] = num;
-            ss +=arr[i]+", ";
-        }
-        System.out.println("random 숫자 10개 입력 값 : "+ss);
-
-        // Merge정렬 실행
-        sort(arr, 0, arr.length);
-        String res="";
-        for(int i=0;i<arr.length;i++) {
-            res += arr[i]+",";
-        }
-        System.out.print("mergeSort 후의 결과출력 값 :"+res);
-        System.out.println();
-        System.out.println();
-    }
-    private static void sort(int[] arr, int low, int high) {
-        if (high - low < 2) {
-            return;
-        }
-        int mid = (low + high) / 2;
-        sort(arr, 0, mid);
-        sort(arr, mid, high);
-        merge(arr, low, mid, high);
-    }
-
-    private static void merge(int[] arr, int low, int mid, int high) {
-        int[] temp = new int[high - low];
-        int t = 0, l = low, h = mid;
-
-        while (l < mid && h < high) {
-            if (arr[l] < arr[h]) {
-                temp[t++] = arr[l++];
-            } else {
-                temp[t++] = arr[h++];
-            }
-        }
-
-        while (l < mid) {
-            temp[t++] = arr[l++];
-        }
-
-        while (h < high) {
-            temp[t++] = arr[h++];
-        }
-
-        for (int i = low; i < high; i++) {
-            arr[i] = temp[i - low];
-        }
-    }
-
-
-
-
-    @Override
-    public void magicSquare() {
-
-    }
-
-    @Override
-    public void zigzag() {
-
-    }
-
-    @Override
-    public void rectangleStarPrint() {
-
-    }
-
-    @Override
-    public void triangleStarPrint() {
-
-    }
 }

@@ -129,7 +129,7 @@ public class QuizController {
                             break;
                         case "2":
                             System.out.println("### 2.quickSort, mergeSort ###");
-                            feb10Service.quickSort();
+                            feb10Service.quickSortRun();
                             feb10Service.mergeSort();
                             break;
                         case "3":

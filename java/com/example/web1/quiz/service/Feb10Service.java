@@ -18,7 +18,7 @@ public interface Feb10Service {
     void insertionSort();
     void selectionSort();
     // 1인
-    void quickSort();
+    void quickSortRun();
     void mergeSort();
     // 1인
     void magicSquare();
