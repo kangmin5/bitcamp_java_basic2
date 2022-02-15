@@ -23,6 +23,7 @@ public class QuizController {
         Feb06Service feb06Service = new Feb06ServiceImpl();
         Feb07Service feb07Service = new Feb07ServiceImpl();
         Feb08Service feb08Service = new Feb08ServiceImpl();
+        Feb10Service feb10Service = new Feb10ServiceImpl();
         while (true){
             System.out.println("[서브메뉴]\n 0)Exit 1)2월6일 2)2월7일 3)2월8일 4)2월10일");
             switch (scanner.next()){
@@ -119,13 +120,14 @@ public class QuizController {
                     System.out.println("작성자 : 1.김아름 2.강민 3.유재혁 4.최건일 5.장원종");
                     System.out.println("[소메뉴]\n0.Exit \n1.bubbleSort, insertionSort, selectionSort \n2.quickSort, mergeSort" +
                             " \n3.magicSquare \n4.zigzag \n5.rectangleStarPrint, triangleStarPrint");
-                    Feb10Service feb10Service = new Feb10ServiceImpl();
+
                     switch (scanner.next()){
                         case "0":
                             System.out.println("### 소메뉴 종료 ###");
                             return;
                         case "1":
                             System.out.println("### 1.bubbleSort, insertionSort, selectionSort ###");
+                            feb10Service.bubbleSort();
                             break;
                         case "2":
                             System.out.println("### 2.quickSort, mergeSort ###");

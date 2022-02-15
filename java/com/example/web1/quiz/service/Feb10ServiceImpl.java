@@ -18,7 +18,44 @@ public class Feb10ServiceImpl implements Feb10Service{
     @Override
     public void bubbleSort() {
         // 랜덤 정수 ( 1 ~ 100) 사이의 10 개 정수 정렬
+        System.out.println("====bubbleSort()===");
+        int[] arr = new int[10];
+        // 10개의 랜덤 숫자 (1~100범위)
+        String res="";
+        String res2="";
+        for(int i =0;i<arr.length ; i++){
+            arr[i] = (int)(Math.random()*100)+1; //랜덤으
+            // 중복 값이 있으면 제거(중복 제거)
+            for(int j=0; j < i; j++){
+                if(arr[i] == arr[j]){
+                    arr[i]--;
+                    break;
+                }
+            }
+            res += arr[i]+",\t";
+
+        }
+        System.out.println("Random 숫자10개 : "+res);
+
+        int temp =0;
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr.length-1;j++){
+                if(arr[j]>arr[j+1]){
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+        for (int i : arr) {
+            res2 += i+",\t";
+
+        }
+        System.out.println("bubbleSort 결과 : "+res2);
+        System.out.println();
     }
+
+
 
     @Override
     public void insertionSort() {
