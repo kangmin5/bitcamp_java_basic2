@@ -139,6 +139,7 @@ public class QuizController {
                             break;
                         case "4":
                             System.out.println("### 4. zigzag ###");
+                            feb10Service.zigzag();
                             break;
                         case "5":
                             System.out.println("### 5. rectangleStarPrint, triangleStarPrint ###");
