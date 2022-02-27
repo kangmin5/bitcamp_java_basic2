@@ -17,54 +17,106 @@ public class Feb10ServiceImpl implements Feb10Service{
 
     @Override
     public void bubbleSort() {
-        // 랜덤 정수 ( 1 ~ 100) 사이의 10 개 정수 정렬
-        System.out.println("====bubbleSort()===");
+/**
+ * author       : 김아름
+ * desc         : 버블정렬
+ * int 타입의 arr 변수 선언, arr 는 10개의 인덱스 값을 가지고 있음
+ * Math 클래스로 1~100의 정수를 구하고 arr[]변수에 넣어 랜덤으로 10개의 숫자를 구함
+ *                              Math 클래스는 int로 형변환 했기 때문에 1~100까지 숫자를 구하기 위해 +1
+ *
+ * int j 선언 -> 정렬 회전수
+ * int k 선언 -> 앞의 수와 비교하기 위한 값
+ *
+ * 앞의 수가 뒤의 수보다 크다면 자리를 바꿔준다
+ * temp -> 바꾸기 위한 변수
+ * */
+
         int[] arr = new int[10];
-        // 10개의 랜덤 숫자 (1~100범위)
-        String res="";
-        String res2="";
-        for(int i =0;i<arr.length ; i++){
-            arr[i] = (int)(Math.random()*100)+1; //랜덤으
-            // 중복 값이 있으면 제거(중복 제거)
-            for(int j=0; j < i; j++){
-                if(arr[i] == arr[j]){
-                    arr[i]--;
-                    break;
-                }
-            }
-            res += arr[i]+",\t";
-
+        System.out.println("정렬전: ");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (Math.random() * 100) + 1;
+            System.out.println("[" + arr[i] + "]");
         }
-        System.out.println("Random 숫자10개 : "+res);
 
-        int temp =0;
-        for(int i=0;i<arr.length;i++){
-            for(int j=0;j<arr.length-1;j++){
-                if(arr[j]>arr[j+1]){
-                    temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1]=temp;
+        for (int j = 0; j < arr.length; j++) {
+            for (int k = 0; k < arr.length - j - 1; k++) {
+                if (arr[k] > arr[k + 1]) {
+                    int temp = arr[k];
+                    arr[k] = arr[k + 1];
+                    arr[k + 1] = temp;
                 }
             }
         }
-        for (int i : arr) {
-            res2 += i+",\t";
-
+        System.out.println("정렬후: ");
+        for (int j = 0; j < arr.length; j++) {
+            System.out.println("[" + arr[j] + "]");
         }
-        System.out.println("bubbleSort 결과 : "+res2);
-        System.out.println();
     }
-
-
 
     @Override
     public void insertionSort() {
-        // 랜덤 정수 ( 1 ~ 100) 사이의 10 개 정수 정렬
+/**
+ * author       : 김아름
+ * desc         : 삽입정렬
+ *
+ *
+ * */
+        int[] arr = new int[10];
+
+        System.out.println("정렬전: ");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (Math.random() * 100) + 1;
+            System.out.println("[" + arr[i] + "]");
+        }
+
+        for (int j = 1; j < arr.length - 1; j++) {
+            int insert = j;
+            int temp = arr[j];
+            while ((insert > 0) && (arr[insert - 1] > temp)) {
+                arr[insert] = arr[insert - 1];
+                insert--;
+            }
+            arr[insert] = temp;
+        }
+        System.out.println("정렬후: ");
+        for (int j = 0; j < arr.length; j++) {
+            System.out.println("[" + arr[j] + "]");
+        }
     }
+
 
     @Override
     public void selectionSort() {
-        // 랜덤 정수 ( 1 ~ 100) 사이의 10 개 정수 정렬
+/**
+ * author       : 김아름
+ * desc         : 선택정렬
+ *
+ *
+ * */
+        int[] arr = new int[10];
+
+        System.out.println("정렬전: ");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) (Math.random() * 100) + 1;
+            System.out.println("[" + arr[i] + "]");
+        }
+
+        for (int j = 0; j < arr.length - 1; j++) {
+            for (int k = j+1; k <arr.length; k++){
+                if (arr[j]>arr[k]){
+                    int temp = arr[j];
+                    arr[j] = arr[k];
+                    arr[k] = temp;
+                }
+
+            }
+        }
+
+        System.out.println("정렬후: ");
+        for (int j = 0; j < arr.length; j++) {
+            System.out.println("[" + arr[j] + "]");
+
+        }
     }
 
 

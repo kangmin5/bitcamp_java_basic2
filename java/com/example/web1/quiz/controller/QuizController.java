@@ -128,14 +128,17 @@ public class QuizController {
                         case "1":
                             System.out.println("### 1.bubbleSort, insertionSort, selectionSort ###");
                             feb10Service.bubbleSort();
+                            feb10Service.insertionSort();
                             break;
                         case "2":
                             System.out.println("### 2.quickSort, mergeSort ###");
                             feb10Service.quickSortRun();
                             feb10Service.mergeSort();
+                            feb10Service.selectionSort();
                             break;
                         case "3":
                             System.out.println("### 3. magicSquare ###");
+                            feb10Service.magicSquare();
                             break;
                         case "4":
                             System.out.println("### 4. zigzag ###");
